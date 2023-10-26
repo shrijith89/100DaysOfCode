@@ -1,0 +1,5 @@
+height = input()
+weight = input()
+heighti = float(height)
+weighti = int(weight)
+print((int)(weighti // (heighti*heighti)))
