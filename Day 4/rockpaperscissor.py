@@ -27,7 +27,7 @@ scissors = '''
 ---.__(___)
 '''
 
-user_choice = int(input("Enter 0,1,2"))
+user_choice = int(input("Type 0 for rock, Type 1 for paper and 2 for scissors"))
 game_images = [rock, paper, scissors]
 computer_choice = random.randint(0, 2)
 
