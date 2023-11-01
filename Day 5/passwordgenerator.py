@@ -18,5 +18,6 @@ password += random.choices(letters, k=letter_count)
 password += random.choices(symbols, k=symbol_count)
 password += random.choices(numbers, k=number_count)
 
-final_string = ''.join(password)
-print(final_string)
+random.shuffle(password)
+password_string = ''.join(password)
+print("Your password is : ".format(password_string))
