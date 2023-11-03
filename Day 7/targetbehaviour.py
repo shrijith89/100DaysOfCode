@@ -15,3 +15,6 @@ while '_' in display:
         if chosen_word[letter] == guess_letter:
             display[letter] = guess_letter
     print(display)
+
+if '_' not in display:
+    print("You Win!")
