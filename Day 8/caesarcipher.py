@@ -11,9 +11,18 @@ alphabet_list = list(text)
 
 def encrypt(direction, text, shift):
     encrypted_message = ""
-    for i in range(0, len(alphabet_list)):
-        if alphabet_list[i] in alphabet:
-            encrypted_message += alphabet[alphabet.index(alphabet_list[i]) + shift]
-    print("The encrypted message is {}".format(encrypted_message))
+    decrypted_message = ""
+    if direction == "encode":
+        for i in range(0, len(alphabet_list)):
+            if alphabet_list[i] in alphabet:
+                encrypted_message += alphabet[alphabet.index(alphabet_list[i]) + shift]
+        print("The encrypted message is {}".format(encrypted_message))
+    elif direction == "decode":
+        for i in range(0, len(alphabet_list)):
+            if alphabet_list[i] in alphabet:
+                decrypted_message += alphabet[alphabet.index(alphabet_list[i]) - shift]
+        print("The decrypted message is {}".format(decrypted_message))
+    else:
+        print("Invalid direction!")
 
 encrypt(direction=direction, text=text, shift=shift)
