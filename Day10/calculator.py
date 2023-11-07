@@ -22,32 +22,21 @@ operations = {
 }
 
 num1 = int(input("What is the first number.? "))
-num2 = int(input("What is the second number.? "))
-answer = 0
-updated_answer = 0
+for i in operations:
+    print(i)
 
 flag = "y"
 count = 0
 
 while flag == "y":
-    if count == 0:
-        for operation in operations:
-            print(operation)
-        operation_symbol = input("Pick an operation type from the above: ")
-        calculation_function = operations[operation_symbol]
-        answer = calculation_function(num1, num2)
-        print("{} {} {} = {}".format(num1, operation_symbol, num2, answer))
+    operation_symbol = input("Pick an operation : ")
+    num2 = int(input("What is the next number.? "))
+    calculation_function = operations[operation_symbol]
+    answer = calculation_function(num1, num2)
+    print("{} {} {} = {}".format(num1, operation_symbol, num2, answer))
 
     flag = input("Do you want to continue.? Type 'y' for yes and 'n' for no ")
     if flag == "n":
-        break
+        flag = 'n'
     else:
-        updated_answer = answer
-        num3 = int(input("Enter the third number "))
-        for operation in operations:
-            print(operation)
-        operation_symbol = input("Pick an operation type from the above: ")
-        count += 1
-        calculation_function = operations[operation_symbol]
-        answer = calculation_function(answer, num3)
-        print("{} {} {} = {}".format(updated_answer, operation_symbol, num3, answer))
+        num1 = answer
