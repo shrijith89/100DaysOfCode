@@ -1,50 +1,83 @@
 import random
 
-def deal_card():
-    cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
-    return random.choice(cards)
+cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
 
-def calculate_sum(cards):
-    sumofcards = 0
-    for i in cards:
-        sumofcards += i
-    return sumofcards
-
-
-def assign_cards(cardcollection):
-    cardcollection = []
+def pick_cards(card_name):
     for i in range(2):
-        cardcollection.append(deal_card())
-    return cardcollection
+        card_name.append(random.choice(cards))
+    return card_name
 
 
-user_cards = assign_cards(deal_card())
-computer_cards = assign_cards(deal_card())
-need_card = False
+def calculate_sum(selected_cards):
+    return sum(selected_cards)
 
-def winner():
-    updated_sum = 0
+
+user_cards = []
+computer_cards = []
+flag = 'y'
+
+
+def initialize():
+    pick_cards(user_cards)
+    pick_cards(computer_cards)
+    print("Computer selected {} ".format(computer_cards))
+    print("Your cards {}, current score {}".format(user_cards, calculate_sum(user_cards)))
+
+
+def decide_winner():
     if calculate_sum(user_cards) == 21:
-        print("User Won.!")
+        print("You Won.!")
     elif calculate_sum(computer_cards) == 21:
-        print("User Lost! Computer Wins!")
+        print("You Lost! Computer Wins!")
     else:
-        need_card = input("Do you want to select any other card, Type 'y' or 'n' ")
-        if need_card == 'y':
-            user_cards.append(assign_cards((deal_card())))
-            for i in range(len(user_cards)):
-                if user_cards[i] == 11:
-                    user_cards[i] = 1
-                updated_sum += user_cards[i]
-winner()
+        max_score()
 
 
-def printfunc():
-    print("The user cards ", user_cards)
-    print("The computer cards ", computer_cards)
-    print("The sum of cards of a user ", calculate_sum(user_cards))
-    print("The sum of cards of a computer ", calculate_sum(computer_cards))
+def max_score():
+    if calculate_sum(user_cards) > 21:
+        if 11 in user_cards:
+            user_cards.remove(11)
+            user_cards.append(1)
+            if calculate_sum(user_cards) > 21:
+                print("You Lost, You went over!")
+                exit()
+            else:
+                pick_new_card()
+        else:
+            print("You Lost, You went over.!")
+            exit()
+    else:
+        pick_new_card()
 
 
-printfunc()
+def failed():
+    print("Failure!")
+
+
+def pick_new_card():
+    global flag
+    flag = input("Enter whether to continue the game or not. Enter 'y' or 'n' ")
+    print("The current computer score is {}".format(calculate_sum(computer_cards)))
+
+    if flag == 'y':
+        user_cards.append(random.choice(cards))
+        print("Your new card is {}".format(user_cards))
+        decide_winner()
+        max_score()
+    else:
+        failed()
+    # max_score()
+
+
+def play_game():
+    print("Entered loop")
+    if 11 in user_cards or 11 in computer_cards:
+        decide_winner()
+    else:
+        print("Entered else part in play game")
+        max_score()
+
+
+initialize()
+play_game()
