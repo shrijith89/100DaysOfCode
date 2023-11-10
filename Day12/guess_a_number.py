@@ -7,41 +7,32 @@ print("Welcome to the Number Guessing Game!")
 print("I'm thinking of a number between 1 to 100")
 
 difficulty_level = input("Choose a difficulty. Type 'easy' or 'hard': ")
-turns = ""
 
-if difficulty_level == 'hard':
-    print("You have {} attempts remaining to guess the number".format(HARD))
-    turns = HARD
-elif difficulty_level == 'easy':
-    print("You have {} attempts remaining to guess the number".format(EASY))
-    turns = EASY
-else:
-    print("Invalid Input!")
 
+def chances(level):
+    if difficulty_level == 'hard':
+        return HARD
+    elif difficulty_level == 'easy':
+        return EASY
+
+
+turns = chances(difficulty_level)
 assigned_number = random.randint(1, 100)
 guess_number = 0
 
-
-def play_game():
-    global guess_number
-    global turns
-    while guess_number != assigned_number:
-        while turns > 0 and guess_number != assigned_number:
-            guess_number = int(input("Guess a Number.! "))
-            if guess_number > assigned_number:
-                print("Too High!")
-                turns -= 1
-                print("You have {} attempts".format(turns))
-            elif guess_number < assigned_number:
-                print("Too Low!")
-                turns -= 1
-                print("You have {} attempts".format(turns))
-            else:
-                print("You Win!")
-
-        else:
-            print("You have run out of chances!")
-            break
-
-
-play_game()
+while guess_number != assigned_number:
+    if turns == 0:
+        print("You have run out of chances")
+        print("The number was {}".format(assigned_number))
+        break
+    print("You have {} chances remaining".format(turns))
+    guess_number = int(input("Guess a Number.! "))
+    if guess_number > assigned_number:
+        print("Too High!")
+        turns -= 1
+    elif guess_number < assigned_number:
+        print("Too Low!")
+        turns -= 1
+    else:
+        print("You Win!")
+        break
