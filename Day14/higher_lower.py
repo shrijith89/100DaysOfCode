@@ -1,3 +1,5 @@
+import random
+
 data = [
     {
         'name': 'Instagram',
@@ -301,8 +303,8 @@ data = [
     }
 ]
 
-import random
-user = ""
+
+userselection = ""
 winner = ""
 score = 0
 choice1 = random.choice(data)
@@ -326,9 +328,9 @@ while user == winner:
     print("Compare A: {}, a {}, from {}".format(choice1['name'], choice1['description'], choice1['country']))
     print("VS")
     print("Compare B: {}, a {}, from {}".format(choice2['name'], choice2['description'], choice2['country']))
-    user = input("Guess who has the highest followers, Please enter A or B ").upper()
+    userselection = input("Guess who has the highest followers, Please enter A or B ").upper()
     winner = decide_winner(choice1, choice2)
-    if winner == user:
+    if winner == userselection:
         score += 1
         print("That is right! The current score is {}".format(score))
         print()
