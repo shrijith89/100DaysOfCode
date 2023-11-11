@@ -31,8 +31,16 @@ resources = {
 }
 
 
-def check_resources():
-    pass
+def check_resources(coffee_type):
+    if coffee_type == "latte":
+        if resources['water'] < 200 or resources['milk'] < 150 or resources['coffee'] < 24:
+            return "No resource found for latte"
+    elif coffee_type == "cappuccino":
+        if resources['water'] < 250 or resources['milk'] < 100 or resources['coffee'] < 24:
+            return "No resource found for cappuccino"
+    else:
+        if resources['water'] < 50 or resources['coffee'] < 18:
+            return "No resource found for espresso"
 
 
 def print_report():
@@ -47,4 +55,5 @@ def make_coffee():
     pass
 
 
-print("What would you like? espresso/latter/cappuccino")
+coffee_type = input("What would you like? espresso/latte/cappuccino")
+check_resources(coffee_type)
