@@ -308,7 +308,7 @@ score = 0
 
 
 def decide_winner(ch1, ch2):
-    if data[data.index(ch1)]['follower_count'] > data[data.index(ch2)]['follower_count']:
+    if ch1['follower_count'] > ch2['follower_count']:
         correct_choice = "A"
     else:
         correct_choice = "B"
