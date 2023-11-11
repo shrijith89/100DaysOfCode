@@ -305,6 +305,8 @@ import random
 user = ""
 winner = ""
 score = 0
+choice1 = random.choice(data)
+choice2 = random.choice(data)
 
 
 def decide_winner(ch1, ch2):
@@ -316,7 +318,7 @@ def decide_winner(ch1, ch2):
 
 
 while user == winner:
-    choice1 = random.choice(data)
+    choice1 = choice2
     choice2 = random.choice(data)
 
     print("Compare A: {}, a {}, from {}".format(choice1['name'], choice1['description'], choice1['country']))
