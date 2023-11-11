@@ -321,7 +321,7 @@ def decide_winner(ch1, ch2):
     return correct_choice
 
 
-while user == winner:
+while userselection == winner:
     choice1 = choice2
     choice2 = random.choice(data)
 
