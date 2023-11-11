@@ -326,7 +326,7 @@ while user == winner:
     print("Compare A: {}, a {}, from {}".format(choice1['name'], choice1['description'], choice1['country']))
     print("VS")
     print("Compare B: {}, a {}, from {}".format(choice2['name'], choice2['description'], choice2['country']))
-    user = input("Guess who has the highest followers, Please enter A or B ")
+    user = input("Guess who has the highest followers, Please enter A or B ").upper()
     winner = decide_winner(choice1, choice2)
     if winner == user:
         score += 1
