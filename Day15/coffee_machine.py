@@ -31,4 +31,20 @@ resources = {
 }
 
 
-print("Wha")
+def check_resources():
+    pass
+
+
+def print_report():
+    pass
+
+
+def process_coins():
+    pass
+
+
+def make_coffee():
+    pass
+
+
+print("What would you like? espresso/latter/cappuccino")
