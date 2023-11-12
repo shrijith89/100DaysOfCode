@@ -44,10 +44,8 @@ def check_resources(coffee_type):
 
 
 def print_report():
-    print("The water present is {}ml, The milk present is {}ml and the coffee present is {}g".format(resources["water"],
-                                                                                                     resources['milk'],
-                                                                                                     resources[
-                                                                                                         'coffee']))
+    print("The water present is {}ml, The milk present is {}ml and the coffee present is {}g"
+          .format(resources["water"], resources['milk'], resources['coffee']))
 
 
 def process_coins():
