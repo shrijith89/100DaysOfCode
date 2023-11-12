@@ -86,3 +86,5 @@ while is_on:
             print("Here is your change {}".format(total_amount - MENU[user_input]['cost']))
             print("Enjoy your coffee")
 
+
+            
