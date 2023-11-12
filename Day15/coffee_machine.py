@@ -67,15 +67,15 @@ def transaction_successful():
     # Check for the remaining amount and if the amount given is sufficient
     pass
 
-while is_on == True:
+
+while is_on:
     user_input = input("What would you like? espresso/latte/cappuccino")
     if user_input == "off":
         is_on = False
     elif user_input == "report":
         print_report()
-    elif not check_resources(user_input):
-        print("Resources unavailable")
     else:
+        check_resources(user_input)
         total_amount = process_coins()
         if total_amount < MENU[user_input]['cost']:
             print("Insufficient amount for the coffee you selected, the price for {} was {}, the amount you paid was {}"
