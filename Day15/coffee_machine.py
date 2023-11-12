@@ -38,9 +38,8 @@ def check_resources(coffee_type):
     coffee = MENU[coffee_type]['ingredients']
     for coffee_ingredients in coffee:
         if resources[coffee_ingredients] < coffee[coffee_ingredients]:
-            return "Not Available"
-        else:
-            return "Available"
+            return False
+    return True
 
 
 def print_report():
@@ -60,13 +59,23 @@ def process_coins():
 command = "on"
 total_amount = 0
 
+
+def make_coffee():
+    # Deduct the resources and make the coffee
+    pass
+
+
+def transaction_successful():
+    # Check for the remaining amount and if the amount given is sufficient
+    pass
+
 while command != "off":
     user_input = input("What would you like? espresso/latte/cappuccino")
     if user_input == "off":
         exit()
     elif user_input == "report":
         print_report()
-    elif check_resources(user_input) == "Not Available":
+    elif not check_resources(user_input):
         print("Resources unavailable")
     else:
         total_amount = process_coins()
