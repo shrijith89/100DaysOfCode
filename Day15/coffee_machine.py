@@ -51,13 +51,11 @@ def print_report():
 
 
 def process_coins():
-    quarters_coins = float(input("How many quarters you have.?"))
-    dimes_coins = float(input("How many dimes you have.?"))
-    nickels_coins = float(input("How many nickels you have"))
-    penny_coins = float(input("How many pennies you have"))
-
-    total_value = (quarters_coins * 0.25) + (dimes_coins * 0.10) + (nickels_coins * 0.05) + (penny_coins * 0.01)
-
+    total_value = 0
+    total_value += float(input("How many quarters you have.?")) * 0.25
+    total_value += float(input("How many dimes you have.?")) * 0.10
+    total_value += float(input("How many nickels you have")) * 0.05
+    total_value += float(input("How many pennies you have")) * 0.01
     return round(total_value, 2)
 
 
