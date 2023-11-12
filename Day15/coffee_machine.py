@@ -1,6 +1,3 @@
-import math
-
-
 MENU = {
     "espresso": {
         "ingredients": {
@@ -56,7 +53,7 @@ def process_coins():
     return round(total_value, 2)
 
 
-command = "on"
+is_on = True
 total_amount = 0
 
 
@@ -70,10 +67,10 @@ def transaction_successful():
     # Check for the remaining amount and if the amount given is sufficient
     pass
 
-while command != "off":
+while is_on == True:
     user_input = input("What would you like? espresso/latte/cappuccino")
     if user_input == "off":
-        exit()
+        is_on = False
     elif user_input == "report":
         print_report()
     elif not check_resources(user_input):
