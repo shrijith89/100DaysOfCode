@@ -64,8 +64,10 @@ def make_coffee(coffee_type):
 
 
 def transaction_successful():
-    # Check for the remaining amount and if the amount given is sufficient
-    pass
+    if check_resources(user_input):
+        process_coins()
+    else:
+
 
 
 while is_on:
@@ -75,9 +77,9 @@ while is_on:
     elif user_input == "report":
         print_report()
     else:
-        check_resources(user_input)
-        total_amount = process_coins()
-        if total_amount < MENU[user_input]['cost']:
+        coffee_type = MENU[user_input]
+        if check_resources():
+            process_coins()
             print("Insufficient amount for the coffee you selected, the price for {} was {}, the amount you paid was {}"
                   .format(user_input, MENU[user_input]['cost'], total_amount))
         else:
