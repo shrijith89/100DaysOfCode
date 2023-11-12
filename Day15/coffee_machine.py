@@ -60,9 +60,10 @@ command = "on"
 total_amount = 0
 
 
-def make_coffee():
-    # Deduct the resources and make the coffee
-    pass
+def make_coffee(coffee_type):
+    coffee = MENU[coffee_type]['ingredients']
+    for coffee_ingredients in coffee:
+        resources[coffee_ingredients] -= coffee[coffee_ingredients]
 
 
 def transaction_successful():
