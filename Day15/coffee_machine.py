@@ -35,17 +35,12 @@ resources = {
 
 
 def check_resources(coffee_type):
-    if coffee_type == "latte":
-        if resources['water'] < 200 or resources['milk'] < 150 or resources['coffee'] < 24:
-            return "No resource found for latte"
-    elif coffee_type == "cappuccino":
-        if resources['water'] < 250 or resources['milk'] < 100 or resources['coffee'] < 24:
-            return "No resource found for cappuccino"
-    elif coffee_type == "espresso":
-        if resources['water'] < 50 or resources['coffee'] < 18:
-            return "No resource found for espresso"
-    else:
-        return "Not Available"
+    coffee = MENU[coffee_type]['ingredients']
+    for coffee_ingredients in coffee:
+        if resources[coffee_ingredients] < coffee[coffee_ingredients]:
+            return "resources unavailable"
+        else:
+            return "Available"
 
 
 def print_report():
