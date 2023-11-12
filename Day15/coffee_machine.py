@@ -38,7 +38,7 @@ def check_resources(coffee_type):
     coffee = MENU[coffee_type]['ingredients']
     for coffee_ingredients in coffee:
         if resources[coffee_ingredients] < coffee[coffee_ingredients]:
-            return "resources unavailable"
+            return "Not Available"
         else:
             return "Available"
 
@@ -61,15 +61,19 @@ command = "on"
 total_amount = 0
 
 while command != "off":
-    coffee_selection = input("What would you like? espresso/latte/cappuccino")
-    if coffee_selection == "report":
+    user_input = input("What would you like? espresso/latte/cappuccino")
+    if user_input == "off":
+        exit()
+    elif user_input == "report":
         print_report()
-    elif check_resources(coffee_selection) != "Not Available":
-        total_amount = process_coins()
-
-    elif total_amount < MENU[coffee_selection]['cost']:
-        print("Insufficient amount for the coffee you selected, the price for {} was {}, the amount you paid was {}".format(coffee_selection,
-                    MENU[coffee_selection]['cost'], total_amount))
+    elif check_resources(user_input) == "Not Available":
+        print("Resources unavailable")
     else:
-        print("Here is your change {}".format(total_amount - MENU[coffee_selection]['cost']))
-        print("Enjoy your coffee")
+        total_amount = process_coins()
+        if total_amount < MENU[user_input]['cost']:
+            print("Insufficient amount for the coffee you selected, the price for {} was {}, the amount you paid was {}"
+                  .format(user_input, MENU[user_input]['cost'], total_amount))
+        else:
+            print("Here is your change {}".format(total_amount - MENU[user_input]['cost']))
+            print("Enjoy your coffee")
+
