@@ -79,6 +79,7 @@ def transaction_successful(coffee, amount):
         print("Insufficient amount")
         return False
 
+
 while is_on:
     user_input = input("What would you like? espresso/latte/cappuccino ")
     if user_input == "off":
