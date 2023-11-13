@@ -82,3 +82,4 @@ while is_on:
         if check_resources(coffee_type):
             amount_received = process_coins()
             transaction_successful(coffee_type, amount_received)
+
