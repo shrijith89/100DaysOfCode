@@ -63,11 +63,12 @@ def make_coffee(coffee_type):
         resources[coffee_ingredients] -= coffee[coffee_ingredients]
 
 
-def transaction_successful():
-    if check_resources(user_input):
-        process_coins()
+def transaction_successful(coffee, amount):
+    # Check for change and refund
+    if amount > MENU[coffee]['cost']:
+        print("Coffee is ready")
     else:
-
+        print("Insufficient amount")
 
 
 while is_on:
@@ -78,13 +79,6 @@ while is_on:
         print_report()
     else:
         coffee_type = MENU[user_input]
-        if check_resources():
-            process_coins()
-            print("Insufficient amount for the coffee you selected, the price for {} was {}, the amount you paid was {}"
-                  .format(user_input, MENU[user_input]['cost'], total_amount))
-        else:
-            print("Here is your change {}".format(total_amount - MENU[user_input]['cost']))
-            print("Enjoy your coffee")
-
-
-            
+        if check_resources(coffee_type):
+            amount_received = process_coins()
+            transaction_successful(coffee_type, amount_received)
