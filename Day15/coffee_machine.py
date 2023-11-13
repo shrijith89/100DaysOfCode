@@ -67,15 +67,17 @@ def transaction_successful(coffee, amount):
     # Check for change and refund
     if amount == MENU[coffee]['cost']:
         print("Coffee is ready, the amount is {}".format(amount))
+        make_coffee(coffee)
     elif amount > MENU[coffee]['cost']:
         print("Coffee is ready, the amount you paid was {}".format(amount))
         print("The change of amount {} is processed".format(round(amount - MENU[coffee]['cost'], 2)))
+        make_coffee(coffee)
     else:
         print("Insufficient amount")
 
 
 while is_on:
-    user_input = input("What would you like? espresso/latte/cappuccino")
+    user_input = input("What would you like? espresso/latte/cappuccino ")
     if user_input == "off":
         is_on = False
     elif user_input == "report":
