@@ -46,10 +46,10 @@ def print_report():
 
 def process_coins():
     total_value = 0
-    total_value += float(input("How many quarters you have.?")) * 0.25
-    total_value += float(input("How many dimes you have.?")) * 0.10
-    total_value += float(input("How many nickels you have")) * 0.05
-    total_value += float(input("How many pennies you have")) * 0.01
+    total_value += float(input("How many quarters you have.? ")) * 0.25
+    total_value += float(input("How many dimes you have.? ")) * 0.10
+    total_value += float(input("How many nickels you have.? ")) * 0.05
+    total_value += float(input("How many pennies you have.? ")) * 0.01
     return round(total_value, 2)
 
 
@@ -65,9 +65,11 @@ def make_coffee(coffee_typ):
 
 def transaction_successful(coffee, amount):
     # Check for change and refund
-    if amount > MENU[coffee]['cost']:
+    if amount == MENU[coffee]['cost']:
         print("Coffee is ready, the amount is {}".format(amount))
-        print("The change is processed {}".format(round(amount - MENU[coffee]['cost'], 2)))
+    elif amount > MENU[coffee]['cost']:
+        print("Coffee is ready, the amount you paid was {}".format(amount))
+        print("The change of amount {} is processed".format(round(amount - MENU[coffee]['cost'], 2)))
     else:
         print("Insufficient amount")
 
