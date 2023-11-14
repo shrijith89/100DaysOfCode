@@ -91,3 +91,4 @@ while is_on:
             amount_received = process_coins()
             if transaction_successful(user_input, amount_received):
                 make_coffee(user_input)
+                
