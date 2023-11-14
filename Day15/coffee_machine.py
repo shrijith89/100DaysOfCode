@@ -31,6 +31,8 @@ resources = {
 }
 
 unavailable_resource = ""
+is_on = True
+total_amount = 0
 
 
 def check_resources(type_of_coffee):
@@ -54,10 +56,6 @@ def process_coins():
     total_value += float(input("How many nickels you have.? ")) * 0.05
     total_value += float(input("How many pennies you have.? ")) * 0.01
     return round(total_value, 2)
-
-
-is_on = True
-total_amount = 0
 
 
 def make_coffee(coffee_typ):
@@ -91,4 +89,4 @@ while is_on:
             amount_received = process_coins()
             if transaction_successful(user_input, amount_received):
                 make_coffee(user_input)
-                
+
