@@ -13,5 +13,9 @@ while is_on:
         is_on = False
     elif choice == "report":
         coffee.report()
+    else:
+        drink = menu.find_drink(choice)
+        if coffee.is_resource_sufficient(choice):
+            money.process_coins()
 
 
