@@ -2,10 +2,16 @@ from menu import Menu, MenuItem
 from coffee_maker import CoffeeMaker
 from money_machine import MoneyMachine
 
+coffee = CoffeeMaker()
+money = MoneyMachine()
 menu = Menu()
-moneyMachine = MoneyMachine()
+is_on = True
 
-order = input("Enter the coffee type you need? cappuccino, latte, espresso")
-menu.find_drink(order)
-moneyMachine.process_coins()
-moneyMachine.make_payment(menu.cost)
+while is_on:
+    choice = input("Enter the coffee type you need? cappuccino, latte, espresso")
+    if choice == "off":
+        is_on = False
+    elif choice == "report":
+        coffee.report()
+
+
