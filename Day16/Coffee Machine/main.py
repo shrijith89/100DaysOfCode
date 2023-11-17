@@ -8,7 +8,7 @@ menu = Menu()
 is_on = True
 
 while is_on:
-    choice = input("Enter the coffee type you need? cappuccino, latte, espresso")
+    choice = input("Enter the coffee type you need? ({}) ".format(menu.get_items()))
     if choice == "off":
         is_on = False
     elif choice == "report":
