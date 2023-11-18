@@ -14,7 +14,7 @@ class QuizBrain:
         self.check_answer(user_answer, current_question.answer)
 
     def check_answer(self, u_answer, c_answer):
-        if u_answer == c_answer:
+        if u_answer.lower() == c_answer.lower():
             self.score += 1
             print("You got it right")
             print("The correct answer was {}".format(c_answer))
@@ -25,4 +25,3 @@ class QuizBrain:
             print("The correct answer was {}".format(c_answer))
             print("Your score is {}/{}".format(self.score, self.question_no))
             print()
-            
