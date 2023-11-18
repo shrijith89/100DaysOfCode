@@ -12,3 +12,4 @@ class QuizBrain:
         current_question = self.question_list[self.question_no]
         self.question_no += 1
         input("Q.{} {} (True or False)".format(self.question_no, current_question.text))
+
