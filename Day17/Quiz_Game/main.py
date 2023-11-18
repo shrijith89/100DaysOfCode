@@ -6,6 +6,3 @@ question_bank = []
 for data in question_data:
     question = Question(data.get("text"), data.get("answer"))
     question_bank.append(question)
-
-for i in question_bank:
-    print(i)
