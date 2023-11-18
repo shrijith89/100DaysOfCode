@@ -4,9 +4,7 @@ class QuizBrain:
         self.question_list = question_list
 
     def still_has_questions(self):
-        if len(self.question_list) == self.question_no:
-            return False
-        return True
+        return len(self.question_list) < self.question_no
 
     def next_question(self):
         current_question = self.question_list[self.question_no]
