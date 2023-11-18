@@ -10,14 +10,19 @@ class QuizBrain:
     def next_question(self):
         current_question = self.question_list[self.question_no]
         self.question_no += 1
-        user_answer = input("Q.{} {} (True or False)".format(self.question_no, current_question.text))
+        user_answer = input("Q.{} {} (True or False) ".format(self.question_no, current_question.text))
         self.check_answer(user_answer, current_question.answer)
 
     def check_answer(self, u_answer, c_answer):
         if u_answer == c_answer:
             self.score += 1
-            print("You got it right\n""The correct answer was {}\n".format(c_answer),
-                  "Your current score is {}".format(self.score))
+            print("You got it right")
+            print("The correct answer was {}".format(c_answer))
+            print("Your current score is {}".format(self.score))
             print("Your score is {}/{}".format(self.score, self.question_no))
+            print()
         else:
-            print("Your incorrect is {}/{}".format(self.score, self.question_no))
+            print("That's wrong")
+            print("The correct answer was {}".format(c_answer))
+            print("Your score is {}/{}".format(self.score, self.question_no))
+            print()
