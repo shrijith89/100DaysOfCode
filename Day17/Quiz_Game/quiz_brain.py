@@ -16,7 +16,8 @@ class QuizBrain:
     def check_answer(self, u_answer, c_answer):
         if u_answer == c_answer:
             self.score += 1
-            print()
-            print("Your score is {}".format(self.score))
+            print("You got it right\n""The correct answer was {}\n".format(c_answer),
+                  "Your current score is {}".format(self.score))
+            print("Your score is {}/{}".format(self.score, self.question_no))
         else:
-            print("The answer was wrong! Your score is {}".format(self.score))
+            print("Your incorrect is {}/{}".format(self.score, self.question_no))
