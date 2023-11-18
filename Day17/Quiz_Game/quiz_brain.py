@@ -17,11 +17,8 @@ class QuizBrain:
         if u_answer.lower() == c_answer.lower():
             self.score += 1
             print("You got it right")
-            print("The correct answer was {}".format(c_answer))
-            print("Your score is {}/{}".format(self.score, self.question_no))
-            print()
         else:
             print("That's wrong")
-            print("The correct answer was {}".format(c_answer))
-            print("Your score is {}/{}".format(self.score, self.question_no))
-            print()
+        print("Your score is {}/{}".format(self.score, self.question_no))
+        print("The correct answer was {}".format(c_answer))
+        print()
