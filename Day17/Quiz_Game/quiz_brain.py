@@ -25,3 +25,4 @@ class QuizBrain:
             print("The correct answer was {}".format(c_answer))
             print("Your score is {}/{}".format(self.score, self.question_no))
             print()
+            
