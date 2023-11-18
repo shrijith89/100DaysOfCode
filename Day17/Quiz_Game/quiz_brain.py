@@ -10,4 +10,5 @@ class QuizBrain:
 
     def next_question(self):
         current_question = self.question_list[self.question_no]
-        input("Q.{} {} (True or False)".format(self.question_no + 1, current_question.text))
+        self.question_no += 1
+        input("Q.{} {} (True or False)".format(self.question_no, current_question.text))
