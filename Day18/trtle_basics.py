@@ -5,12 +5,9 @@ screen = Screen()
 
 
 def draw_square():
-    turtle.forward(100)
-    turtle.right(90)
-    turtle.forward(100)
-    turtle.right(90)
-    turtle.forward(100)
-    turtle.right(90)
+    for i in range(3):
+        turtle.forward(100)
+        turtle.right(90)
     turtle.forward(100)
 
 
