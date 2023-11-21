@@ -9,7 +9,7 @@ def move_random():
         t.pencolor(random.choice(colors))
         t.pensize(10)
         t.forward(25)
-        t.right(random.choice(range(0, 360, 90)))
+        t.setheading(random.choice(range(0, 360, 90)))
 
 
 move_random()
