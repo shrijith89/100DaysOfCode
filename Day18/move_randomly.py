@@ -1,18 +1,15 @@
 import turtle as t
 import random
 
+colors = ['blue', 'yellow', 'red', 'black', 'brown']
 
-def move_random(j):
+
+def move_random():
     for _ in range(100):
-        if j == 0:
-            t.forward(60)
-            t.right(90)
-        else:
-            t.forward(40)
-            t.left(70)
+        t.pencolor(random.choice(colors))
+        t.pensize(10)
+        t.forward(25)
+        t.right(random.choice(range(0, 360, 90)))
 
 
-r = [0, 1]
-
-for i in range(50):
-    move_random(random.choice(r))
+move_random()
