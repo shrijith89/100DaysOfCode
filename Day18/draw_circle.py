@@ -9,3 +9,8 @@ for _ in range(200):
 for _ in range(200):
     t.circle(100)
     t.setheading(t.heading() + 2)
+
+# Without Overlap
+for _ in range(360 // 5):
+    t.circle(100)
+    t.setheading(t.heading() + 5)
