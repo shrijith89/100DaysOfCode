@@ -1,5 +1,6 @@
 import colorgram
 import turtle as t
+import random
 
 colors = colorgram.extract('spot_painting.jpg', 25)
 color_list = []
@@ -12,8 +13,7 @@ def draw_dots():
     t.colormode(255)
     for i in range(10):
         for j in range(len(color_list)-15):
-            t.pencolor(color_list[j])
-            t.dot(20)
+            t.dot(20, random.choice(color_list))
             t.penup()
             t.forward(50)
         t.sety(t.ycor() + 40)
