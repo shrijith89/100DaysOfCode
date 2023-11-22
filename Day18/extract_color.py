@@ -10,14 +10,13 @@ for i in range(len(colors)):
 
 def draw_dots():
     t.colormode(255)
-    for i in range(9):
-        t.setx(0)
-        t.sety(t.ycor()+40)
-        for j in range(len(color_list)-5):
+    for i in range(10):
+        for j in range(len(color_list)-15):
             t.pencolor(color_list[j])
             t.dot(20)
             t.penup()
-            t.forward(30)
-
+            t.forward(50)
+        t.sety(t.ycor() + 40)
+        t.setx(0)
 
 draw_dots()
