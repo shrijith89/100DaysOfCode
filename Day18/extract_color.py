@@ -11,8 +11,8 @@ for i in range(len(colors)):
 
 def draw_dots():
     t.colormode(255)
-    for i in range(10):
-        for j in range(len(color_list)-15):
+    for column in range(10):
+        for dots in range(len(color_list)-15):
             t.dot(20, random.choice(color_list))
             t.penup()
             t.forward(50)
