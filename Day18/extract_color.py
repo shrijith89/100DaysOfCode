@@ -19,4 +19,5 @@ def draw_dots():
         t.sety(t.ycor() + 40)
         t.setx(0)
 
+
 draw_dots()
