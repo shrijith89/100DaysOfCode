@@ -2,7 +2,6 @@ import random
 import turtle
 from turtle import Turtle, Screen
 
-
 screen = Screen()
 screen.setup(width=600, height=600)
 user_bet = screen.textinput(title="Choose Color", prompt="Which turtle is going to win the race, Choose your color")
@@ -26,10 +25,12 @@ if user_bet:
 
 while race_is_on:
     for trtle in all_turtles:
-        trtle.forward(random.randint(1,10))
+        trtle.forward(random.randint(1, 10))
         if trtle.xcor() >= 260:
             winner = trtle.color()[0]
             race_is_on = False
 
-
-
+if winner == user_bet:
+    print("Your guess was right")
+else:
+    print("You lost! {} won the race".format(winner))
