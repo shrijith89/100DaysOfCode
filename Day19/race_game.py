@@ -13,9 +13,8 @@ xcor = -260
 for i in range(6):
     t = Turtle(shape='turtle')
     t.penup()
+    t.color(colors[i])
     t.goto(xcor, ycor)
     ycor += 40
-
-
 
 screen.exitonclick()
