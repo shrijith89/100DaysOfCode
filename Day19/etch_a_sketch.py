@@ -28,9 +28,9 @@ def clr_screen():
 
 
 screen.listen()
-screen.onkey(clockwise, 'D')
-screen.onkey(move_forwards, 'W')
-screen.onkey(move_backwards, 'S')
-screen.onkey(counter_clockwise, 'A')
-screen.onkey(clr_screen, 'C')
+screen.onkey(clockwise, 'd')
+screen.onkey(move_forwards, 'w')
+screen.onkey(move_backwards, 's')
+screen.onkey(counter_clockwise, 'a')
+screen.onkey(clr_screen, 'c')
 screen.exitonclick()
