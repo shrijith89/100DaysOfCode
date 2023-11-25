@@ -19,8 +19,20 @@ class Snake:
             dist += 20
 
     def move(self):
-        for turtle1 in range(len(self.segments)-1, 0, -1):
+        for turtle1 in range(len(self.segments) - 1, 0, -1):
             new_xcor = self.segments[turtle1 - 1].xcor()
             new_ycor = self.segments[turtle1 - 1].ycor()
             self.segments[turtle1].goto(new_xcor, new_ycor)
         self.segments[0].forward(MOVE_SEGMENT)
+
+    def up(self):
+        self.segments[0].setheading(90)
+
+    def down(self):
+        self.segments[0].setheading(-90)
+
+    def left(self):
+        self.segments[0].setheading(-180)
+
+    def right(self):
+        self.segments[0].setheading(180)
