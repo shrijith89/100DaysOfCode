@@ -13,7 +13,10 @@ screen.tracer(0)
 
 snake = Snake()
 screen.listen()
+turtle.onkey(snake.up, 'Up')
+turtle.onkey(snake.down, 'Down')
 turtle.onkey(snake.right, 'Right')
+turtle.onkey(snake.left, 'Left')
 
 while is_on:
     screen.update()
