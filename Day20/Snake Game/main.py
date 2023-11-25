@@ -1,3 +1,4 @@
+import turtle
 from turtle import Screen
 import time
 from snake import Snake
@@ -11,6 +12,8 @@ is_on = True
 screen.tracer(0)
 
 snake = Snake()
+screen.listen()
+turtle.onkey(snake.right, 'Right')
 
 while is_on:
     screen.update()
