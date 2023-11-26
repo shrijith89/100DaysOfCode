@@ -15,6 +15,7 @@ screen.tracer(0)
 snake = Snake()
 food = Food()
 
+
 screen.listen()
 turtle.onkey(snake.up, 'Up')
 turtle.onkey(snake.down, 'Down')
