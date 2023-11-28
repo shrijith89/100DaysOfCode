@@ -18,6 +18,7 @@ food = Food()
 score = scoreboard.Scoreboard()
 
 screen.listen()
+screen.listen()
 turtle.onkey(snake.up, 'Up')
 turtle.onkey(snake.down, 'Down')
 turtle.onkey(snake.right, 'Right')
