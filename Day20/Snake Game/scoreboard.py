@@ -2,7 +2,11 @@ import turtle
 from turtle import Turtle, Screen
 from turtle import Pen
 
+ALIGNMENT = "center"
+FONT = ("Arial", 16, "normal")
+
 screen = Screen()
+
 
 class Scoreboard(Turtle):
 
@@ -14,9 +18,13 @@ class Scoreboard(Turtle):
         self.penup()
         self.goto(-20, 250)
         self.pendown()
-        self.write(f"Score : {self.score}", align="center", font=("Arial", 16, "normal"))
+        self.write(f"Score : {self.score}", align=ALIGNMENT, font=FONT)
 
     def increase_score(self):
         self.score += 1
         self.clear()
-        self.write(f"Score : {self.score}", align="center", font=("Arial", 16, "normal"))
+        self.write(f"Score : {self.score}", align=ALIGNMENT, font=FONT)
+
+    def game_over(self):
+        self.goto(0, 0)
+        self.write("GAME_OVER", align=ALIGNMENT, font=FONT)
