@@ -10,14 +10,14 @@ screen.bgcolor('black')
 screen.setup(width=800, height=600)
 screen.title("Pong Game")
 
-r_paddle = Paddle((350, 0), None)
-l_paddle = Paddle((-350, 0), None)
+r_paddle = Paddle((350, 0))
+l_paddle = Paddle((-350, 0))
 screen.tracer(0)
 
 screen.listen()
 
-turtle.onkey(r_paddle.move_up, "Up")
-turtle.onkey(r_paddle.move_down, "Down")
+turtle.onkey(l_paddle.move_up, "w")
+turtle.onkey(l_paddle.move_down, "s")
 
 
 while is_on:
