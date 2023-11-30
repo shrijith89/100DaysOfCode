@@ -16,6 +16,9 @@ screen.tracer(0)
 
 screen.listen()
 
+turtle.onkey(r_paddle.move_up, "Up")
+turtle.onkey(r_paddle.move_down, "Down")
+
 turtle.onkey(l_paddle.move_up, "w")
 turtle.onkey(l_paddle.move_down, "s")
 

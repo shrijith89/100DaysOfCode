@@ -4,14 +4,14 @@ MOVE_PADDLE = 40
 
 
 class Paddle(Turtle):
-    def __init__(self, *destination):
+    def __init__(self, destination):
         super().__init__()
         self.paddle = Turtle()
         self.paddle.shape("square")
         self.paddle.color('white')
         self.paddle.shapesize(stretch_wid=5, stretch_len=1)
         self.paddle.penup()
-        self.paddle.goto(*destination)
+        self.paddle.goto(destination)
 
     def move_up(self):
         new_y = self.paddle.ycor() + MOVE_PADDLE
