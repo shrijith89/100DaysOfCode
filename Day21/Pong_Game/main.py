@@ -1,7 +1,7 @@
 import turtle
 from turtle import Turtle, Screen
 from paddle import Paddle
-
+from ball import Ball
 MOVE_PADDLE = 40
 is_on = True
 
@@ -15,13 +15,14 @@ l_paddle = Paddle((-350, 0))
 screen.tracer(0)
 
 screen.listen()
-
 turtle.onkey(r_paddle.move_up, "Up")
 turtle.onkey(r_paddle.move_down, "Down")
 
 turtle.onkey(l_paddle.move_up, "w")
 turtle.onkey(l_paddle.move_down, "s")
 
+ball = Ball()
+turtle.mainloop()
 
 while is_on:
     screen.update()
