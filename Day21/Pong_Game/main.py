@@ -12,8 +12,9 @@ screen.title("Pong Game")
 
 r_paddle = Paddle((350, 0))
 l_paddle = Paddle((-350, 0))
-screen.tracer(0)
+ball = Ball()
 
+screen.tracer(0)
 screen.listen()
 turtle.onkey(r_paddle.move_up, "Up")
 turtle.onkey(r_paddle.move_down, "Down")
@@ -21,10 +22,8 @@ turtle.onkey(r_paddle.move_down, "Down")
 turtle.onkey(l_paddle.move_up, "w")
 turtle.onkey(l_paddle.move_down, "s")
 
-ball = Ball()
-turtle.mainloop()
-
 while is_on:
     screen.update()
+    ball.move()
 
 screen.exitonclick()
