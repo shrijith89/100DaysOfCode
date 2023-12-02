@@ -11,7 +11,7 @@ class Ball(Turtle):
         self.penup()
 
     def move(self):
-        new_x = self.xcor() + 1
-        new_y = self.ycor() + 1
-        time.sleep(0.01)
+        new_x = self.xcor() + 10
+        new_y = self.ycor() + 10
+        time.sleep(0.05)
         self.goto(new_x, new_y)

@@ -14,7 +14,6 @@ r_paddle = Paddle((350, 0))
 l_paddle = Paddle((-350, 0))
 ball = Ball()
 
-screen.tracer(0)
 screen.listen()
 turtle.onkey(r_paddle.move_up, "Up")
 turtle.onkey(r_paddle.move_down, "Down")
