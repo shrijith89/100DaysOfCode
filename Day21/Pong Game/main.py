@@ -5,11 +5,16 @@ import time
 screen = Screen()
 screen.setup(width=800, height=600)
 
-paddle = Paddle()
+r_paddle = Paddle((350, 0))
+l_paddle = Paddle((-350, 0))
 
 # Use the instance 'paddle' to access the methods
-screen.onkey(paddle.move_up, "Up")
-screen.onkey(paddle.move_down, "Down")
+screen.onkey(r_paddle.move_up, "Up")
+screen.onkey(r_paddle.move_down, "Down")
+
+screen.onkey(l_paddle.move_up, "w")
+screen.onkey(l_paddle.move_down, "s")
+
 
 screen.tracer(0)
 screen.listen()
