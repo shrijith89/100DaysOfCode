@@ -25,8 +25,6 @@ game_is_on = True
 
 while game_is_on:
     ball.move()
-    ball.x_collision()
-    ball.y_collision()
     screen.update()
 
 
