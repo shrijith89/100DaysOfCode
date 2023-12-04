@@ -1,6 +1,5 @@
 import time
 from turtle import Turtle
-import random
 
 
 class Ball(Turtle):
