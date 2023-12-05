@@ -7,8 +7,8 @@ screen = Screen()
 screen.setup(width=800, height=600)
 screen.bgcolor('black')
 
-r_paddle = Paddle((350, 0))
-l_paddle = Paddle((-350, 0))
+r_paddle = Paddle((360, 0))
+l_paddle = Paddle((-360, 0))
 ball = Ball()
 
 screen.onkey(r_paddle.move_up, "Up")
@@ -28,6 +28,11 @@ while game_is_on:
     screen.update()
 
     if ball.ycor() > 290 or ball.ycor() < -290:
-        ball.bounce()
+        ball.bounce_y()
+
+    if ball.distance(r_paddle) < 50 and ball.xcor() > 340:
+        ball.bounce_x()
+    if ball.distance(l_paddle) < 50 and ball.xcor() < -340:
+        ball.bounce_x()
 
 screen.exitonclick()
