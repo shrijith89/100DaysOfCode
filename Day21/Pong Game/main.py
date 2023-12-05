@@ -38,4 +38,7 @@ while game_is_on:
     if ball.xcor() > 380:
         ball.reset_position()
 
+    if ball.xcor() < -380:
+        ball.reset_position()
+
 screen.exitonclick()
