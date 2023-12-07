@@ -6,12 +6,14 @@ MOVE_DISTANCE = 10
 FINISH_LINE_Y = 280
 
 
-class Player:
+class Player(Turtle):
     def __init__(self):
-        turtle.setheading(90)
-        turtle.penup()
-        turtle.goto(STARTING_POSITION)
-        turtle.shape('turtle')
+        super().__init__()
+        self.penup()
+        self.goto(STARTING_POSITION)
+        self.showturtle()
+        self.shape('turtle')
+        self.setheading(90)
 
     def move_forward(self):
-        turtle.forward(MOVE_DISTANCE)
+        self.forward(MOVE_DISTANCE)
