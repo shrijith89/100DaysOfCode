@@ -9,5 +9,7 @@ FINISH_LINE_Y = 280
 class Player:
     def __init__(self):
         turtle.setheading(90)
+        turtle.penup()
+        turtle.goto(STARTING_POSITION)
         turtle.shape('turtle')
 
