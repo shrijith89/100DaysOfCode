@@ -11,7 +11,6 @@ class Player(Turtle):
         super().__init__()
         self.penup()
         self.goto(STARTING_POSITION)
-        self.showturtle()
         self.shape('turtle')
         self.setheading(90)
 
