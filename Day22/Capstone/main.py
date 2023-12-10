@@ -3,6 +3,7 @@ import turtle
 from turtle import Screen
 from player import Player
 from car_manager import CarManager
+from scoreboard import Scoreboard
 
 
 screen = Screen()
@@ -15,6 +16,7 @@ car_manager = CarManager()
 turtle.onkey(player.move_forward, key='Up')
 screen.listen()
 car = CarManager()
+scoreboard = Scoreboard()
 
 game_is_on = True
 flag = True
