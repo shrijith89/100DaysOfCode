@@ -34,3 +34,4 @@ while game_is_on:
     if player.finish_line():
         player.starting_position()
         car_manager.level_up()
+        scoreboard.increase_level()
