@@ -36,6 +36,13 @@ class Snake:
             self.segments[turtle1].goto(new_xcor, new_ycor)
         self.segments[0].forward(MOVE_SEGMENT)
 
+    def reset(self):
+        for seg in self.segments:
+            seg.goto(1000, 1000)
+        self.segments.clear()
+        self.create_snake()
+        self.head = self.segments[0]
+
     def up(self):
         if self.segments[0].heading() != DOWN:
             self.segments[0].setheading(90)
