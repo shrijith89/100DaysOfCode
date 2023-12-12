@@ -1,3 +1,2 @@
-with open('example.txt', 'w') as file:
-    file.write("Java is a high level programming language")
-    
+with open('example.txt', 'a') as file:
+    file.write("\nJava is a high level programming language")
