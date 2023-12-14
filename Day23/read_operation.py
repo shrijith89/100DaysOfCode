@@ -1,4 +1,4 @@
-with open("example.txt") as file:
+with open("../../../Downloads/example.txt") as file:
     contents = file.read()
     print(contents)
     file.close()
