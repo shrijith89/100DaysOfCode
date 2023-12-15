@@ -8,7 +8,6 @@
         #Hint3: THis method will help you: https://www.w3schools.com/python/ref_string_strip.asp
 
 names = []
-modified_content = ""
 
 with open('./Input/Names/invited_names.txt') as f:
     for line in f:
@@ -17,7 +16,6 @@ with open('./Input/Names/invited_names.txt') as f:
 
 
 def write():
-    index = 0
     with open('./Input/Letters/starting_letter.txt') as f:
         content = f.read()
 
