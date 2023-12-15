@@ -21,8 +21,9 @@ def write():
 
     for name in names:
         modified_content = content.replace("[name]", name)
-        output_file_name = f'./Output/ReadyToSend/{name}.txt'
+        output_file_name = f'./Output/ReadyToSend/letter_for_{name}.txt'
         with open(output_file_name, 'w') as file:
             file.write(modified_content)
+
 
 write()
