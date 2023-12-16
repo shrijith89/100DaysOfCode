@@ -1,16 +1,15 @@
 import pandas
-gray_count = 0
 
 content = pandas.read_csv('Central_Park_Squirrel_Census.csv')
 
-gray_color = content['Primary Fur Color'] == 'Gray'
-red_color = content['Primary Fur Color'] == 'Red'
-black_color = content['Primary Fur Color'] == 'Black'
+gray_count = (content['Primary Fur Color'] == 'Gray').count()
+red_count = (content['Primary Fur Color'] == 'Red').count()
+black_count = (content['Primary Fur Color'] == 'Black').count()
 
 
 data_dict = {
     "Fur Color": ["gray", "red", "black"],
-    "Count": [gray_color.count(), red_color.count(), black_color.count()]
+    "Count": [gray_count, red_count, black_count]
 }
 
 data = pandas.DataFrame(data_dict)
