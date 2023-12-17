@@ -37,11 +37,8 @@ while count != len(content['state'].tolist()):
                 missing_states.append(states)
         break
 
-column_name = ["Missing_States"]
 
-df = pandas.DataFrame(missing_states, columns=column_name)
+df = pandas.DataFrame(missing_states, columns=["Missing_States"])
 csv_file_name = "missing_states.csv"
 
 df.to_csv(csv_file_name)
-
-
