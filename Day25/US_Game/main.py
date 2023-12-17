@@ -9,11 +9,11 @@ image = "blank_states_img.gif"
 screen.addshape(image)
 turtle.shape(image)
 
-answer_state = screen.textinput(title="Guess the State", prompt="What's another state name?").title()
 content = pandas.read_csv('50_states.csv')
-length_of_content = len(content['state'].tolist())
 
-while count != length_of_content:
+while count != len(content['state'].tolist()):
+    answer_state = screen.textinput(title="States correct ({}/{})".format(count, len(content['state'].tolist())),
+                                    prompt="What's another state name?").title()
     if answer_state not in content['state'].tolist():
         pass
     else:
@@ -27,8 +27,6 @@ while count != length_of_content:
         t.goto(x_value, y_value)
         t.pendown()
         t.write(answer_state)
-    answer_state = screen.textinput(title="States correct ({}/{})".format(count, len(content['state'].tolist())), prompt="What's another state name?").title()
 
 print("Game complete")
-
 screen.exitonclick()
