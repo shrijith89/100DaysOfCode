@@ -20,11 +20,13 @@ while count != length_of_content:
         count += 1
         x_value = content.loc[content.state == answer_state, 'x'].iloc[0]
         y_value = content.loc[content.state == answer_state, 'y'].iloc[0]
-        turtle.clear()
-        turtle.penup()
-        turtle.goto(x_value, y_value)
-        turtle.pendown()
-        turtle.write(answer_state)
+        t = turtle.Turtle()
+        t.hideturtle()
+        t.clear()
+        t.penup()
+        t.goto(x_value, y_value)
+        t.pendown()
+        t.write(answer_state)
     answer_state = screen.textinput(title="States correct ({}/{})".format(count, len(content['state'].tolist())), prompt="What's another state name?").title()
 
 print("Game complete")
