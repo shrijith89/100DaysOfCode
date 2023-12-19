@@ -1,20 +1,8 @@
-file_content1 = []
-file_content2 = []
-
 with open('file1.txt') as f:
-    for line in f:
-        strip_line = line.strip()
-        file_content1.append(int(strip_line))
+    file_content1 = [int(line.strip()) for line in f]
 
 with open('file2.txt') as f:
-    for line in f:
-        strip_line = line.strip()
-        file_content2.append(int(strip_line))
+    file_content2 = [int(line.strip()) for line in f]
 
-result = []
-
-for i in file_content1:
-    if i in file_content2:
-        result.append(i)
-
+result = [i for i in file_content1 if i in file_content2]
 print(result)
