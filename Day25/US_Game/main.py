@@ -32,9 +32,7 @@ while count != len(content['state'].tolist()):
         t.pendown()
         t.write(answer_state)
     elif answer_state == 'Exit':
-        for states in stateList:
-            if states not in entered_states:
-                missing_states.append(states)
+        missing_states = [states for states in stateList if states not in entered_states]
         break
 
 
