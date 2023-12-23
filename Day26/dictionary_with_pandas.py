@@ -11,7 +11,8 @@ weather_c = {"Monday": 12,
 weather_data_frame = pd.DataFrame(list(weather_c.items()), columns=['Day', 'Temperature'])
 weather_data_frame = weather_data_frame.set_index('Day')
 
-print(weather_data_frame)
+# print(weather_data_frame)
 
 for(key, value) in weather_data_frame.iterrows():
-    print(key, value)
+    if key == 'Sunday':
+        print(value)
