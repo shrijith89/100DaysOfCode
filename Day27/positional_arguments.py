@@ -6,5 +6,4 @@ def my_function(b, *a):
     return fun_sum
 
 
-numbers = [2, 4, 5, 100, 7]
-print(my_function(1, *numbers))
+print(my_function(1, *[2, 4, 5, 100, 7]))
