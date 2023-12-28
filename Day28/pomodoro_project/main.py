@@ -42,7 +42,7 @@ canvas.grid(row=1, column=2)
 
 
 def start_click():
-    count_down(5)
+    count_down(SHORT_BREAK_MIN)
 
 
 #startButton
