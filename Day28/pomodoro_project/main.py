@@ -27,6 +27,7 @@ window.minsize(width=400, height=300)
 canvas = Canvas(width=200, height=300)
 tomato_img = tkinter.PhotoImage(file="tomato.png")
 canvas.create_image(100, 112, image=tomato_img)
+canvas.create_text(100, 140, text="00:00", font=(FONT_NAME, 35, "bold"), fill="white")
 canvas.pack()
 
 window.mainloop()
