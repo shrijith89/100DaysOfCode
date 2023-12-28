@@ -17,11 +17,18 @@ LONG_BREAK_MIN = 20
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 
+
+def count_down(count):
+    canvas.itemconfig(timer_text, text=count)
+    if count > 0:
+        window.after(1000, count_down, count - 1)
+
 # ---------------------------- UI SETUP ------------------------------- #
 window = tkinter.Tk()
 window.title("Pomodoro")
 window.config(pady=50)
 window.minsize(width=300, height=200)
+
 
 #label
 timer_label = tkinter.Label(text="Timer", font=("Arial", 32, "normal"), fg=GREEN)
@@ -30,11 +37,16 @@ timer_label.grid(row=0, column=2)
 canvas = Canvas(width=200, height=300)
 tomato_img = tkinter.PhotoImage(file="tomato.png")
 canvas.create_image(100, 112, image=tomato_img)
-canvas.create_text(100, 140, text="00:00", font=(FONT_NAME, 35, "bold"), fill="white")
+timer_text = canvas.create_text(100, 140, text="00:00", font=(FONT_NAME, 35, "bold"), fill="white")
 canvas.grid(row=1, column=2)
 
+
+def start_click():
+    count_down(5)
+
+
 #startButton
-start_button = tkinter.Button(text="Start")
+start_button = tkinter.Button(text="Start", command=start_click)
 start_button.grid(row=2, column=1, padx=5)
 
 #resetButton
