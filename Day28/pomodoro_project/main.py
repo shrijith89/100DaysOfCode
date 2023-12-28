@@ -21,25 +21,27 @@ LONG_BREAK_MIN = 20
 window = tkinter.Tk()
 window.title("Pomodoro")
 window.config(pady=50)
-window.minsize(width=400, height=300)
+window.minsize(width=300, height=200)
 
 #label
-timer_label = tkinter.Label(text="Timer", font=("Arial", 32, "normal"), highlightcolor=RED)
-timer_label.place(x=50, y=50)
-timer_label.grid(row=1, column=20, padx=150)
+timer_label = tkinter.Label(text="Timer", font=("Arial", 32, "normal"), fg=GREEN)
+timer_label.grid(row=0, column=2)
 
 canvas = Canvas(width=200, height=300)
 tomato_img = tkinter.PhotoImage(file="tomato.png")
 canvas.create_image(100, 112, image=tomato_img)
 canvas.create_text(100, 140, text="00:00", font=(FONT_NAME, 35, "bold"), fill="white")
-canvas.grid(row=2, column=20)
+canvas.grid(row=1, column=2)
 
 #startButton
 start_button = tkinter.Button(text="Start")
-start_button.grid(row=5, column=10)
+start_button.grid(row=2, column=1, padx=5)
 
 #resetButton
 reset_button = tkinter.Button(text="Reset")
-reset_button.grid(row=5, column=25)
+reset_button.grid(row=2, column=3)
 
+#check_mark
+check_mark = tkinter.Label(text="✅")
+check_mark.grid(row=3, column=2)
 window.mainloop()
