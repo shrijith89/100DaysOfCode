@@ -1,3 +1,5 @@
+import tkinter
+from tkinter import *
 
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
@@ -16,3 +18,13 @@ LONG_BREAK_MIN = 20
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 
 # ---------------------------- UI SETUP ------------------------------- #
+window = tkinter.Tk()
+window.title("Pomodoro")
+window.minsize(width=450, height=400)
+
+photo = PhotoImage(file="tomato.png")
+
+image_label = tkinter.Label(window, image=photo)
+image_label.pack(pady=50)
+
+window.mainloop()
