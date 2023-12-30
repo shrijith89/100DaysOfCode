@@ -11,7 +11,8 @@ WORK_MIN = 25
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 
-# ---------------------------- TIMER RESET ------------------------------- # 
+
+# ---------------------------- TIMER RESET ------------------------------- #
 
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 
@@ -23,14 +24,16 @@ def count_down(count):
     if count > 0:
         window.after(1000, count_down, count - 1)
 
+
 # ---------------------------- UI SETUP ------------------------------- #
+
+
 window = tkinter.Tk()
 window.title("Pomodoro")
 window.config(pady=50)
 window.minsize(width=300, height=200)
 
-
-#label
+# label
 timer_label = tkinter.Label(text="Timer", font=("Arial", 32, "normal"), fg=GREEN)
 timer_label.grid(row=0, column=2)
 
@@ -45,15 +48,15 @@ def start_click():
     count_down(SHORT_BREAK_MIN)
 
 
-#startButton
+# startButton
 start_button = tkinter.Button(text="Start", command=start_click)
 start_button.grid(row=2, column=1, padx=5)
 
-#resetButton
+# resetButton
 reset_button = tkinter.Button(text="Reset")
 reset_button.grid(row=2, column=3)
 
-#check_mark
+# check_mark
 check_mark = tkinter.Label(text="✅")
 check_mark.grid(row=3, column=2)
 window.mainloop()
