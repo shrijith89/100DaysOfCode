@@ -27,10 +27,10 @@ def start_timer():
         timer_label.config(text="Break", fg=GREEN)
         count_down(short_break_sec)
     elif reps % 8 == 0:
-        timer_label.config(text="Break Repetition 8")
+        timer_label.config(text="Break", fg=PINK)
         count_down(long_break_sec)
     else:
-        timer_label.config(text="Work")
+        timer_label.config(text="Work", fg=RED)
         count_down(work_sec)
 
 
