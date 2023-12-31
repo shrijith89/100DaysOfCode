@@ -12,13 +12,25 @@ WORK_MIN = 25
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 reps = 0
+timer_job = None  # Variable to store the current countdown job
 
 
 # ---------------------------- TIMER RESET ------------------------------- #
+def reset_timer():
+    window.after_cancel(timer_job)
+    canvas.itemconfig(timer_text, text=f"{00}:{00}")
+    timer_label.config(text="Timer")
+    check_mark.config(text="")
 
-# ---------------------------- TIMER MECHANISM ------------------------------- # 
+
+# ---------------------------- TIMER MECHANISM ------------------------------- #
 def start_timer():
-    global reps
+    global reps, timer_job
+
+    if timer_job is not None:
+        window.after_cancel(timer_job)
+        timer_job = None
+
     reps += 1
     work_sec = WORK_MIN * 60
     short_break_sec = SHORT_BREAK_MIN * 60
@@ -27,7 +39,7 @@ def start_timer():
         timer_label.config(text="Break", fg=GREEN)
         count_down(short_break_sec)
     elif reps % 8 == 0:
-        timer_label.config(text="Break", fg=PINK)
+        timer_label.config(text="Long Break", fg=PINK)
         count_down(long_break_sec)
     else:
         timer_label.config(text="Work", fg=RED)
@@ -37,6 +49,7 @@ def start_timer():
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 
 def count_down(count):
+    global timer_job
     count_min = math.floor(count / 60)
     count_seconds = (count % 60)
     if count_seconds == 0:
@@ -46,9 +59,13 @@ def count_down(count):
 
     canvas.itemconfig(timer_text, text=f"{count_min}:{count_seconds}")
     if count > 0:
-        window.after(1000, count_down, count - 1)
+        timer_job = window.after(1000, count_down, count - 1)
     else:
         start_timer()
+        marks = ""
+        for _ in range(math.floor(reps/2)):
+            marks += "✅"
+        check_mark.config(text=marks)
 
 
 # ---------------------------- UI SETUP ------------------------------- #
@@ -75,10 +92,10 @@ start_button = tkinter.Button(text="Start", command=start_timer)
 start_button.grid(row=2, column=1, padx=5)
 
 # resetButton
-reset_button = tkinter.Button(text="Reset")
+reset_button = tkinter.Button(text="Reset", command=reset_timer)
 reset_button.grid(row=2, column=3)
 
-# check_mark
-check_mark = tkinter.Label(text="✅")
+# check_mark "✅"
+check_mark = tkinter.Label()
 check_mark.grid(row=3, column=2)
 window.mainloop()
