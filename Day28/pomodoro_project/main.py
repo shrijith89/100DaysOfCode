@@ -18,9 +18,11 @@ timer_job = None  # Variable to store the current countdown job
 # ---------------------------- TIMER RESET ------------------------------- #
 def reset_timer():
     window.after_cancel(timer_job)
-    canvas.itemconfig(timer_text, text=f"{00}:{00}")
+    canvas.itemconfig(timer_text, text="00:00")
     timer_label.config(text="Timer")
     check_mark.config(text="")
+    global reps
+    reps = 0
 
 
 # ---------------------------- TIMER MECHANISM ------------------------------- #
