@@ -16,25 +16,31 @@ canvas = Canvas(width=200, height=200)
 canvas.create_image(100, 100, image=logo_png)
 canvas.grid(row=1, column=1)
 
+#Labels
 websiteLabel = tkinter.Label(text="Website:")
 websiteLabel.grid(row=2, column=0)
 
-websiteInput = tkinter.Entry(width=35)
-websiteInput.grid(row=2, column=1, columnspan=2, padx=20)
-
 emailUsername = tkinter.Label(text="Email/Username:")
-emailUsername.grid(row=3, column=0, pady=5)
-
-emailInput = tkinter.Entry(width=35)
-emailInput.grid(row=3, column=1, columnspan=2, padx=20)
+emailUsername.grid(row=3, column=0)
 
 passwordText = tkinter.Label(text="Password:")
-passwordText.grid(row=4, column=0, pady=5)
+passwordText.grid(row=4, column=0)
+
+#Inputs
+websiteInput = tkinter.Entry(width=35)
+websiteInput.grid(row=2, column=1, columnspan=2)
+
+emailInput = tkinter.Entry(width=35)
+emailInput.grid(row=3, column=1, columnspan=2)
 
 passwordField = tkinter.Entry(width=21)
-passwordField.grid(row=4, column=1, padx=0)
+passwordField.grid(row=4, column=1)
 
+#Buttons
 generateButton = tkinter.Button(text="Generate Password")
 generateButton.grid(row=4, column=2)
+
+addButton = tkinter.Button(text="Add", width=31)
+addButton.grid(row=5, column=1, columnspan=2)
 
 window.mainloop()
