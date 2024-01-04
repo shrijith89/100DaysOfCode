@@ -1,9 +1,13 @@
 import tkinter
+import pandas
 from tkinter import *
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
+def call():
+    with open("example.txt", 'w') as f:
+        f.write(websiteInput.get()+"|"+emailInput.get()+"|"+passwordField.get())
 
 # ---------------------------- UI SETUP ------------------------------- #
 
@@ -28,9 +32,11 @@ passwordText.grid(row=4, column=0)
 
 #Inputs
 websiteInput = tkinter.Entry(width=35)
+websiteInput.focus()
 websiteInput.grid(row=2, column=1, columnspan=2)
 
 emailInput = tkinter.Entry(width=35)
+emailInput.insert(5, "p.shrijith@test.com")
 emailInput.grid(row=3, column=1, columnspan=2)
 
 passwordField = tkinter.Entry(width=21)
@@ -40,7 +46,7 @@ passwordField.grid(row=4, column=1)
 generateButton = tkinter.Button(text="Generate Password")
 generateButton.grid(row=4, column=2)
 
-addButton = tkinter.Button(text="Add", width=31)
+addButton = tkinter.Button(text="Add", width=31, command=call)
 addButton.grid(row=5, column=1, columnspan=2)
 
 window.mainloop()
