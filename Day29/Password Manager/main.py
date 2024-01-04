@@ -11,6 +11,9 @@ def write_data():
     with open("example.txt", 'a') as f:
         f.write(websiteInput.get() + " | " + emailInput.get() + " | " + passwordField.get())
         f.write("\n")
+    websiteInput.delete(0, 'end')
+    emailInput.delete(0, 'end')
+    passwordField.delete(0, 'end')
 
 
 # ---------------------------- UI SETUP ------------------------------- #
