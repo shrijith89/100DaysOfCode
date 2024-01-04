@@ -8,8 +8,9 @@ from tkinter import *
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 
 def write_data():
-    with open("example.txt", 'w') as f:
+    with open("example.txt", 'a') as f:
         f.write(websiteInput.get() + " | " + emailInput.get() + " | " + passwordField.get())
+        f.write("\n")
 
 
 # ---------------------------- UI SETUP ------------------------------- #

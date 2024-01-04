@@ -1,1 +1,2 @@
-amazon | p.shrijith@test.com | Test@123
+example | p.shrijith@test.com | 123
+example1 | p.shrijith1@test.com | 1234
