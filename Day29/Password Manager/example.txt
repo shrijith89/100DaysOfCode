@@ -1,1 +1,1 @@
-hai|p.shrijith@test.com|example
+amazon | p.shrijith@test.com | Test@123

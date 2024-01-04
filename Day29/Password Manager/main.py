@@ -2,12 +2,15 @@ import tkinter
 import pandas
 from tkinter import *
 
+
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
-def call():
+
+def write_data():
     with open("example.txt", 'w') as f:
-        f.write(websiteInput.get()+"|"+emailInput.get()+"|"+passwordField.get())
+        f.write(websiteInput.get() + " | " + emailInput.get() + " | " + passwordField.get())
+
 
 # ---------------------------- UI SETUP ------------------------------- #
 
@@ -20,7 +23,7 @@ canvas = Canvas(width=200, height=200)
 canvas.create_image(100, 100, image=logo_png)
 canvas.grid(row=1, column=1)
 
-#Labels
+# Labels
 websiteLabel = tkinter.Label(text="Website:")
 websiteLabel.grid(row=2, column=0)
 
@@ -30,7 +33,7 @@ emailUsername.grid(row=3, column=0)
 passwordText = tkinter.Label(text="Password:")
 passwordText.grid(row=4, column=0)
 
-#Inputs
+# Inputs
 websiteInput = tkinter.Entry(width=35)
 websiteInput.focus()
 websiteInput.grid(row=2, column=1, columnspan=2)
@@ -42,11 +45,11 @@ emailInput.grid(row=3, column=1, columnspan=2)
 passwordField = tkinter.Entry(width=21)
 passwordField.grid(row=4, column=1)
 
-#Buttons
+# Buttons
 generateButton = tkinter.Button(text="Generate Password")
 generateButton.grid(row=4, column=2)
 
-addButton = tkinter.Button(text="Add", width=31, command=call)
+addButton = tkinter.Button(text="Add", width=31, command=write_data)
 addButton.grid(row=5, column=1, columnspan=2)
 
 window.mainloop()
