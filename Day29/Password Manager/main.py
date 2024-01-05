@@ -3,19 +3,29 @@ import pandas
 from tkinter import *
 from tkinter import messagebox
 
+
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 
 
 def write_data():
-    messagebox.showinfo(title="Data Added", message="Successfully added the data")
-    with open("example.txt", 'a') as f:
-        f.write(websiteInput.get() + " | " + emailInput.get() + " | " + passwordField.get())
-        f.write("\n")
-    websiteInput.delete(0, 'end')
-    emailInput.delete(0, 'end')
-    passwordField.delete(0, 'end')
+    if len(websiteInput.get()) == 0 or len(passwordField.get()) == 0:
+        messagebox.showinfo(title="Empty Data", message="Fill all the fields")
+
+    else:
+        flag = messagebox.askokcancel(title="Data Added", message=f"These are the details entered: "
+                                                                  f"email:{emailInput.get()}\n password:{passwordField.get()}\n"
+                                                                  f"can be saved.?")
+
+        if flag:
+            with open("example.txt", 'a') as f:
+                f.write(websiteInput.get() + " | " + emailInput.get() + " | " + passwordField.get())
+                f.write("\n")
+
+            websiteInput.delete(0, 'end')
+            emailInput.delete(0, 'end')
+            passwordField.delete(0, 'end')
 
 
 # ---------------------------- UI SETUP ------------------------------- #
