@@ -1,13 +1,15 @@
 import tkinter
 import pandas
 from tkinter import *
-
+from tkinter import messagebox
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 
+
 def write_data():
+    messagebox.showinfo(title="Data Added", message="Successfully added the data")
     with open("example.txt", 'a') as f:
         f.write(websiteInput.get() + " | " + emailInput.get() + " | " + passwordField.get())
         f.write("\n")
