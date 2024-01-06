@@ -12,12 +12,10 @@ from tkinter import messagebox
 def write_data():
     if len(websiteInput.get()) == 0 or len(passwordField.get()) == 0:
         messagebox.showinfo(title="Empty Data", message="Fill all the fields")
-
     else:
         flag = messagebox.askokcancel(title="Data Added", message=f"These are the details entered: "
                                                                   f"email:{emailInput.get()}\n password:{passwordField.get()}\n"
                                                                   f"can be saved.?")
-
         if flag:
             with open("example.txt", 'a') as f:
                 f.write(websiteInput.get() + " | " + emailInput.get() + " | " + passwordField.get())
