@@ -24,6 +24,7 @@ def write_data():
             websiteInput.delete(0, 'end')
             emailInput.delete(0, 'end')
             passwordField.delete(0, 'end')
+            
 
 # ---------------------------- UI SETUP ------------------------------- #
 
