@@ -2,9 +2,14 @@ import tkinter
 import pandas
 from tkinter import *
 from tkinter import messagebox
-
+import password_generator
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
+
+
+def display_password():
+    passwordField.insert(tkinter.END, password_generator.password)
+
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 
@@ -60,7 +65,7 @@ passwordField = tkinter.Entry(width=21)
 passwordField.grid(row=4, column=1)
 
 # Buttons
-generateButton = tkinter.Button(text="Generate Password")
+generateButton = tkinter.Button(text="Generate Password", command=display_password)
 generateButton.grid(row=4, column=2)
 
 addButton = tkinter.Button(text="Add", width=31, command=write_data)

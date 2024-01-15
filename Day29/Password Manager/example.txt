@@ -11,3 +11,4 @@ a | p.shrijith@test.com | dad
 a | p.shrijith@test.com | dad
 example | p.shrijith@test.com | test
 d | p.shrijith@test.com | s
+amazon | p.shrijith@test.com | ZTv$3h8KHp3%o$u
