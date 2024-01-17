@@ -32,6 +32,7 @@ def write_data():
             
 # ---------------------------- UI SETUP ------------------------------- #
 
+
 window = tkinter.Tk()
 window.title("Password Manager")
 window.config(padx=50, pady=50)
