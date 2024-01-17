@@ -20,8 +20,6 @@ password_list += [random.choice(numbers) for _ in range(nr_numbers)]
 
 random.shuffle(password_list)
 
-password = ""
-for char in password_list:
-    password += char
+password = "".join(char for char in password_list)
 
 print(f"Your password is: {password}")
