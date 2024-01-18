@@ -36,7 +36,7 @@ def write_data():
                                                                   f"can be saved.?")
         if flag:
             with open("example.json", 'a') as f:
-                json.dump(new_data, f)
+                json.dump(new_data, f, indent=4)
 
             websiteInput.delete(0, 'end')
             emailInput.delete(0, 'end')
