@@ -37,7 +37,8 @@ def write_data():
         if flag:
             with open("example.json", 'a') as f:
                 json.dump(new_data, f, indent=4)
-
+            data = json.load(f)
+            print(data)
             websiteInput.delete(0, 'end')
             emailInput.delete(0, 'end')
             passwordField.delete(0, 'end')
