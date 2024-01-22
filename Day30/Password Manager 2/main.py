@@ -35,13 +35,23 @@ def write_data():
                                                                   f"email:{emailInput.get()}\n password:{passwordField.get()}\n"
                                                                   f"can be saved.?")
         if flag:
-            with open("example.json", 'a') as f:
-                json.dump(new_data, f, indent=4)
-            data = json.load(f)
-            print(data)
-            websiteInput.delete(0, 'end')
-            emailInput.delete(0, 'end')
-            passwordField.delete(0, 'end')
+            with open("example.json", 'r') as f:
+                # Writing_data
+                # json.dump(new_data, f, indent=4)
+                # reading_data
+                # data = json.load(f)
+                # print(data)
+
+                # update_data
+                data = json.load(f)
+                data.update(new_data)
+
+            with open("example.json", 'w') as f:
+                json.dump(data, f, indent=4)
+
+                websiteInput.delete(0, 'end')
+                emailInput.delete(0, 'end')
+                passwordField.delete(0, 'end')
 
 
 # ---------------------------- UI SETUP ------------------------------- #
