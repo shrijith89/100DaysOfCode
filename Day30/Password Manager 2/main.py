@@ -53,9 +53,7 @@ def write_data():
                 emailInput.delete(0, 'end')
                 passwordField.delete(0, 'end')
 
-
 # ---------------------------- UI SETUP ------------------------------- #
-
 
 window = tkinter.Tk()
 window.title("Password Manager 2")
