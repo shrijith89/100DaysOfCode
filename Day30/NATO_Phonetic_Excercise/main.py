@@ -12,6 +12,7 @@ print(phonetic_dict)
 
 flag = True
 
+
 while flag:
     word = input("Enter a word: ").upper()
     try:
