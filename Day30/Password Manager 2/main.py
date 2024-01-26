@@ -1,5 +1,4 @@
 import tkinter
-import pandas
 from tkinter import *
 from tkinter import messagebox
 import password_generator
@@ -7,7 +6,6 @@ import json
 
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
-
 
 def display_password():
     passwordField.insert(tkinter.END, password_generator.password)
