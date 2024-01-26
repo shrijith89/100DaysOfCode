@@ -51,6 +51,7 @@ def write_data():
                 emailInput.delete(0, 'end')
                 passwordField.delete(0, 'end')
 
+
 # ---------------------------- UI SETUP ------------------------------- #
 
 window = tkinter.Tk()
@@ -78,7 +79,7 @@ websiteInput.focus()
 websiteInput.grid(row=2, column=1, columnspan=2)
 
 emailInput = tkinter.Entry(width=35)
-emailInput.insert(5, "p.shrijith@test.com")
+emailInput.insert(0, "p.shrijith@test.com")
 emailInput.grid(row=3, column=1, columnspan=2)
 
 passwordField = tkinter.Entry(width=21)
