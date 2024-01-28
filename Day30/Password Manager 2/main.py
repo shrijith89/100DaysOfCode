@@ -46,7 +46,6 @@ def write_data():
 
             with open("example.json", 'w') as f:
                 json.dump(data, f, indent=4)
-
                 websiteInput.delete(0, 'end')
                 emailInput.delete(0, 'end')
                 passwordField.delete(0, 'end')
