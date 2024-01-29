@@ -10,7 +10,6 @@ import json
 def display_password():
     passwordField.insert(tkinter.END, password_generator.password)
 
-
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 
 
