@@ -12,7 +12,6 @@ def display_password():
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 
-
 def write_data():
     website = websiteInput.get()
     email = emailInput.get()
